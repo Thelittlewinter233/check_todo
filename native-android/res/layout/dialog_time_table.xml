@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 节次时间表编辑器：列表按 1..N 节展示，每项点击依次选择开始/结束时间。 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="360dp"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="16dp">
+
+    <TextView
+        android:id="@+id/time_table_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textSecondary"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_time_table_reset"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1.2"
+            android:background="@drawable/button_secondary"
+            android:text="恢复默认"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonSecondaryText"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/button_time_table_add"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_secondary"
+            android:text="增加一节"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonSecondaryText"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/button_time_table_remove"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_secondary"
+            android:text="删除一节"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonSecondaryText"
+            android:textSize="13sp" />
+
+        <!-- 保存：点了才做整表校验；有问题用胶囊条提示且不落盘。 -->
+        <Button
+            android:id="@+id/button_time_table_save"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_primary"
+            android:text="保存"
+            android:textAllCaps="false"
+            android:textColor="@color/onPrimary"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- 不再放错误文本：编辑过程中不打扰，行内静默变红即可；
+         整表问题在点「保存」时用胶囊条提示。保留 id 以免引用处空指针。 -->
+    <TextView
+        android:id="@+id/time_table_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/time_table_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+</LinearLayout>

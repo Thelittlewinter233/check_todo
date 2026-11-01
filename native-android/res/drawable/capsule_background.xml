@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 胶囊式提醒条背景：深色圆角，浮在内容之上，短暂出现后自动消失。 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#E6202A2E" />
+    <corners android:radius="22dp" />
+    <padding
+        android:bottom="10dp"
+        android:left="18dp"
+        android:right="18dp"
+        android:top="10dp" />
+</shape>

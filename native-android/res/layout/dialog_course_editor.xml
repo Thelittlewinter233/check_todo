@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="课程名称"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_course_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="例如：高等数学"
+            android:inputType="text"
+            android:maxLength="40"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="教师"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_course_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="教师姓名"
+            android:inputType="text"
+            android:maxLength="30"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="教室"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_course_room"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="例如：教一 201"
+            android:inputType="text"
+            android:maxLength="40"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="星期"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_course_day"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="节次（1-60）"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/input_course_start_node"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="开始节"
+                android:inputType="number"
+                android:maxLength="2"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="至"
+                android:textColor="@color/textSecondary" />
+
+            <EditText
+                android:id="@+id/input_course_end_node"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="结束节"
+                android:inputType="number"
+                android:maxLength="2"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="周次"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/input_course_start_week"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="开始周"
+                android:inputType="number"
+                android:maxLength="2"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="至"
+                android:textColor="@color/textSecondary" />
+
+            <EditText
+                android:id="@+id/input_course_end_week"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="结束周"
+                android:inputType="number"
+                android:maxLength="2"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="周次类型"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_course_type"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="备注"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_course_note"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="可选"
+            android:inputType="text"
+            android:maxLength="80"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="学分"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_course_credit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="可选，例如 3"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/course_error_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/statusMissedText"
+            android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

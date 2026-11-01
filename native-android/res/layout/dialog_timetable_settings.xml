@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/button_term_start"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/button_secondary"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonSecondaryText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="总周数"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_max_week"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="例如 20"
+            android:inputType="number"
+            android:maxLength="2"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="每天节数"
+            android:textColor="@color/textSecondary"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_daily_nodes"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="例如 12"
+            android:inputType="number"
+            android:maxLength="2"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/button_time_table"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_secondary"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonSecondaryText" />
+
+        <CheckBox
+            android:id="@+id/check_show_sat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="显示周六"
+            android:textColor="@color/textPrimary" />
+
+        <CheckBox
+            android:id="@+id/check_show_sun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="显示周日"
+            android:textColor="@color/textPrimary" />
+
+        <CheckBox
+            android:id="@+id/check_show_other_week"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="显示非本周课程"
+            android:textColor="@color/textPrimary" />
+
+        <TextView
+            android:id="@+id/timetable_settings_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/statusMissedText"
+            android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

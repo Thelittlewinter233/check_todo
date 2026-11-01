@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="教务系统导入"
+        android:textColor="@color/textPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="登录教务系统并打开课表页面，再点下方「提取课表」捕获课程（含内嵌 iframe）。"
+        android:textColor="@color/textSecondary"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/online_school_row"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_online_selected_school"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="未选择学校"
+            android:textColor="@color/textPrimary"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/button_online_school"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="选择学校"
+            android:textAllCaps="false"
+            android:textColor="@color/textPrimary"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_online_remove_school"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="清除"
+            android:textAllCaps="false"
+            android:textColor="@color/textPrimary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_online_family_guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="打开课表页面后点导入"
+        android:textColor="@color/textSecondary"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/input_online_url"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/card"
+            android:hint="输入教务系统网址"
+            android:imeOptions="actionGo"
+            android:importantForAutofill="no"
+            android:inputType="textUri"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            android:singleLine="true"
+            android:textColor="@color/textPrimary"
+            android:textColorHint="@color/textSecondary"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/button_online_go"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_primary"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:text="打开"
+            android:textAllCaps="false"
+            android:textColor="@color/onPrimary"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/button_online_history"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="4dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="历史"
+            android:textAllCaps="false"
+            android:textColor="@color/textPrimary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!--
+      进度/状态提示：放在 WebView 上方、顶部控制区之下。
+      原先在底部操作栏里，会被「提取/停止/框架/诊断/导入/取消」挤成省略号——用户反馈看不到进度。
+      这里允许两行并自动换行，底部操作栏保持吸底不受影响。
+    -->
+    <TextView
+        android:id="@+id/text_online_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/card"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:paddingStart="10dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="4dp"
+        android:text="准备就绪"
+        android:textColor="@color/textSecondary"
+        android:textSize="12sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1">
+
+        <WebView
+            android:id="@+id/webview_online"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/online_guide_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="输入网址或选择学校后登录教务系统；打开课表页面后点「提取课表」完成捕获。"
+            android:textColor="@color/textSecondary"
+            android:textSize="13sp" />
+    </FrameLayout>
+
+    <!--
+      底部操作栏吸底。状态文字已移到 WebView 上方，这里只放操作控件。
+      用 HorizontalScrollView 包一层：小屏/大字体下按钮总宽可能超过屏宽，
+      横向可滚保证每个按钮都点得到（原先会被挤成 0 宽）。
+    -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/check_online_capture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:minWidth="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="6dp"
+            android:text="被动捕获"
+            android:textColor="@color/textSecondary"
+            android:textSize="12sp" />
+
+        <!-- frame 转储：把「控制台 copy 课表 frame 的 outerHTML」自动化。默认手动勾选，不自动全量遍历。 -->
+        <Button
+            android:id="@+id/button_online_frames"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="框架"
+            android:textAllCaps="false"
+            android:textColor="@color/textPrimary"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_online_diagnostics"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="诊断"
+            android:textAllCaps="false"
+            android:textColor="@color/textPrimary"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_online_extract"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="提取课表"
+            android:textAllCaps="false"
+            android:textColor="@color/textPrimary"
+            android:textSize="12sp" />
+
+        <!-- 提取中在原位置替换「提取课表」：同一按钮位置切换，避免布局跳动。 -->
+        <Button
+            android:id="@+id/button_online_stop"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="停止"
+            android:textAllCaps="false"
+            android:textColor="@color/textPrimary"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/button_online_import"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:enabled="false"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="导入"
+            android:textAllCaps="false"
+            android:textColor="@color/textPrimary"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_online_cancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="取消"
+            android:textAllCaps="false"
+            android:textColor="@color/textPrimary"
+            android:textSize="12sp" />
+    </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>
